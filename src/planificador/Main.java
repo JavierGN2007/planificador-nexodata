@@ -57,6 +57,9 @@ public class Main {
             for (Proceso proceso : procesos) {
                 System.out.println(proceso);
             }
+            Algoritmo alg = new RoundRobin(quantum);
+            Simulador simulador = new Simulador(procesos, alg);
+            simulador.ejecutar();
 
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
